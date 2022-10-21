@@ -3,6 +3,10 @@ import Main from "../../layout/Main";
 import Home from '../../pages/Home/Home/Home';
 import Catagory from '../../pages/Catagory/Catagory/Catagory';
 import News from '../../pages/News/News/News';
+import Login from "../../pages/Login/Login";
+import Register from "../../pages/Register/Register";
+import PrivateRoutes from "../../PrivateRoutes/PrivateRoutes";
+import TremsAndCondition from "../../other/TermsAndCondition/TremsAndCondition";
 
 export const routes=createBrowserRouter([
     {
@@ -21,9 +25,22 @@ export const routes=createBrowserRouter([
             },
             {
                 path:'/news/:id',
-                element:<News></News>,
+                element:<PrivateRoutes><News></News></PrivateRoutes>,
                 loader:({params})=>fetch(`http://localhost:5000/news/${params.id}`),
+            },
+            {
+                path:'/login',
+                element:<Login></Login>
+            },
+            {
+                path:'/register',
+                element:<Register></Register>
+            },
+            {
+                path:'/terms',
+                element:<TremsAndCondition></TremsAndCondition>
             }
+
         ]
     }
 ])

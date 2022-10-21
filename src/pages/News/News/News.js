@@ -7,7 +7,7 @@ const News = () => {
   const news = useLoaderData();
   const { title, details, image_url, author, category_id } = news;
 
-  console.log(news);
+  // console.log(news);
   return (
     <Card>
       <Card.Img variant="top" src={image_url} />
@@ -15,7 +15,7 @@ const News = () => {
         <Card.Title>{title}</Card.Title>
         <Card.Text>{details}</Card.Text>
         <Link to={`/catagory/${category_id}`}>
-          <Button variant="primary">see the all catagory news</Button>
+          <Button variant="primary">see the all catagory news  </Button>
         </Link>
       </Card.Body>
     </Card>
